@@ -52,14 +52,16 @@ Better read as:
     }
 
 The basic starting gates are as follows:
-- &: and
-- |: or
-- ^: xor
-- !: not
+- `&`: and
+- `|`: or
+- `^`: xor
+- `!`: not
+
 Some other included useful functions are:
-- *: clock
-- /: rising edge detector
-- \: falling edge detector
+
+- `*`: clock
+- `/`: rising edge detector
+- `\\`: falling edge detector
 To use a chip you have created in another, simply put a `.` before its name.
 
     main{
