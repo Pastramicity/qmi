@@ -61,7 +61,7 @@ Some other included useful functions are:
 
 - `*`: clock
 - `/`: rising edge detector
-- `\\`: falling edge detector
+- `\`: falling edge detector
 To use a chip you have created in another, simply put a `.` before its name.
 
     main{
