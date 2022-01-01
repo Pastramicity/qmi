@@ -67,7 +67,7 @@ fn main() {
         }
         new_tokens.push(tok);
     }
-
+    println!("Parsed text.");
     let tokens = new_tokens;
     
 
@@ -97,7 +97,7 @@ fn main() {
         }});
     }
     //finished tokenization
-
+    println!("Tokenized text");
 
 }
 #[derive(Clone )]
