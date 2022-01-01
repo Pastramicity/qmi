@@ -98,7 +98,6 @@ fn main() {
     }
     //finished tokenization
 
-    
 
 }
 #[derive(Clone )]
