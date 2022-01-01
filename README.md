@@ -18,29 +18,39 @@ The goal of qm is to act as a sort of replacement for the traditional, diagram b
 To start, create a file ending in `.qm`.
 
 Your code starts from the `main` chip:
+
     main{
     
     }
+
 The main chip will evaluate whatever is inside and output it to the console (A list of 0s and 1s)
 
 > Functionality for parsing numbers, getting real-time user io, etc. will be added soon.
 
 To create a new chip, simply declare it outside the main function, including inputs in parentheses `(input1 input2)` and outputs in brackets `[output1 output2]`. Arguments should be separated by spaces as shown and logic should be in curly brackets.
+
     chip(a b)[o]{
     
     }
+
 Evaluation goes left to right, with gate arguments on the left separated by spaces and gates on the right
+
     chip(a b)[o]{
         a b &
     }
+
 The value of gates can be passed into other gates automatically and combined as arguments themselves.
+
     chip(a b)[o]{
         a b & ! b &
     }
+
 Better read as:
+
     chip(a b)[o]{
         ((a b &) !) (b) &
     }
+
 The basic starting gates are as follows:
 - &: and
 - |: or
@@ -51,6 +61,7 @@ Some other included useful functions are:
 - /: rising edge detector
 - \: falling edge detector
 To use a chip you have created in another, simply put a `.` before its name.
+
     main{
         0 1 .chip
     }
