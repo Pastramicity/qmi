@@ -1,0 +1,26 @@
+; ;-comments
+; &-and, |-or, ^-xor, !-not,  .-gate
+; /-rising edge, \-falling edge, *-clock
+; --store in variable
+
+chip(input1 input2 input3){
+; output expression evaluated left to right
+}
+
+nand(a b){
+    a b &!
+}
+
+nor(a b){
+    a b |!
+}
+
+xnor(a b){
+    a b ^!
+}
+
+
+
+main{
+1 0 .nand
+}

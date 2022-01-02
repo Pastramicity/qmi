@@ -1,0 +1,31 @@
+chip(input1 input2)[output1 output2]{
+; logic
+; [output output]
+; or 
+; logic
+; [output]
+; [output]
+; or
+; logic - output1
+; logic - output2
+}
+
+sr_lat(s r)[q qn]{
+    s qn |! - q
+    r q |! - qn
+}
+sr_enable(s r en)[q qn]{
+    s en & r en & .sr_lat
+}
+
+d_lat(d en)[q qn]{
+    d! d en .sr_enable
+}
+
+d_ff(d)[q qn]{
+    d */ .d_lat
+}
+
+sr_ff(s r)[q qn]{
+    s r */ .sr_enable
+}

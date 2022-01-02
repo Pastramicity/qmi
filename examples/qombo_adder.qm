@@ -1,0 +1,22 @@
+add(a b carry)[sum ocarry]{
+    a b ^-abx
+    a b &-abd
+    [abx carry ^]
+    [abx carry & abd |]
+}
+
+; ,- range of variables
+4b_add(a 1,4 b 1,4 carry)[o 1,4 ocarry]{
+    a4 b4 carry .add - o4 c1
+    a3 b3 c1 .add - o3 c2 
+    a2 b2 c2 .add - o2 c3
+    a1 b1 c3 .add - o1 ocarry
+}
+
+4b_AU(a 1,4 b 1,4 sub)[o 1,4 z neg carry]{
+    a 1,4 b 1,4 sub ^ sub .4b_add - o 1,4 carry
+    o1 o2 & o3 & o4 & - z
+    o1 - neg
+}
+
+
